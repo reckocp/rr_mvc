@@ -14,7 +14,7 @@
 * The server file _should_ be loading all your files in `app/controllers` and `app/models`. It has also loaded `pry` and `json` for you.
 
 
-* You will be using the Postman app for any requests that are not `GET` requests. 
+* You will be using the Postman app for any requests that are not `GET` requests.
 * All `GET` requests can be displayed directly in the browser by navigating to the URL requested.
 * In the assignment instructions, if the type of the request is not specified, it can be assumed to be `GET`.
 

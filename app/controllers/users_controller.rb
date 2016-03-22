@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+  def first_name
+    all_users = Users.new.all
+    first_name = params[:first_name].upcase
+    if first_name[0,1] == "S"
+      render first_name.to_json
+    else
+      render "Not found!".to_json, status: "404 Not Found"
+    end
+  end
   def show
     render Users.new.all.to_json
   end
