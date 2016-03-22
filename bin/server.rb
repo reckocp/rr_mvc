@@ -23,6 +23,10 @@ loop do
   request += socket.gets
 
   next if request.split(/ /)[1] == "/favicon.ico" #Just skip favicon requests
+  if request.split(/ /)[1] == "/favicon.ico" #Just skip favicon requests
+     socket.close
+     next
+  end
 
   request_count += 1
 
@@ -56,6 +60,15 @@ loop do
   puts
 
   response = Router.new(@request).route
+
+  if response.nil?
+    puts "*" * 20
+    puts "RESPONSE WAS NIL!"
+    puts "*" * 20
+    socket.print "HTTP/1.1 500 SERVER ERROR\r\n"
+    socket.close
+    next
+  end
 
 
   # We need to include the Content-Type and Content-Length headers
