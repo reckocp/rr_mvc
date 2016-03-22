@@ -22,16 +22,9 @@ loop do
 
   request += socket.gets
 
-<<<<<<< HEAD
-  next if request.split(/ /)[1] == "/favicon.ico" #Just skip favicon requests
-  if request.split(/ /)[1] == "/favicon.ico" #Just skip favicon requests
-     socket.close
-     next
-=======
   if request.split(/ /)[1] == "/favicon.ico" #Just skip favicon requests
     socket.close
     next
->>>>>>> cba1166905480dec55895935c34dbb6193a5e535
   end
 
   request_count += 1
